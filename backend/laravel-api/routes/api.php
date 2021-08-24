@@ -1,5 +1,7 @@
 <?php
 Use App\Models\Libro;
+Use App\Models\Obra;
+Use App\Models\Comentario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+//RUTAS LIBROS
 Route::get('libros', function() {
     // If the Content-Type and Accept headers are set to 'application/json',
     // this will return a JSON structure. This will be cleaned up later.
@@ -41,6 +43,61 @@ Route::put('libros/{id}', function(Request $request, $id) {
 
 Route::delete('libros/{id}', function($id) {
     Libro::find($id)->delete();
+
+    return 204;
+});
+//RUTAS OBRAS
+Route::get('obras', function() {
+    // If the Content-Type and Accept headers are set to 'application/json',
+    // this will return a JSON structure. This will be cleaned up later.
+    return Obra::all();
+});
+
+Route::get('obras/{id}', function($id) {
+    return Obra::find($id);
+});
+
+Route::post('obras', function(Request $request) {
+    return Obra::create($request->all);
+});
+
+Route::put('obras/{id}', function(Request $request, $id) {
+    $obra = Obra::findOrFail($id);
+    $obra->update($request->all());
+
+    return $obra;
+});
+
+Route::delete('obras/{id}', function($id) {
+    Obra::find($id)->delete();
+
+    return 204;
+});
+
+//RUTAS COMENTARIOS
+Route::get('comentarios', function() {
+    // If the Content-Type and Accept headers are set to 'application/json',
+    // this will return a JSON structure. This will be cleaned up later.
+    return Comentario::all();
+});
+
+Route::get('comentarios/{id}', function($id) {
+    return Comentario::find($id);
+});
+
+Route::post('comentarios', function(Request $request) {
+    return Comentario::create($request->all);
+});
+
+Route::put('comentarios/{id}', function(Request $request, $id) {
+    $comentario = Comentario::findOrFail($id);
+    $comentario->update($request->all());
+
+    return $comentario;
+});
+
+Route::delete('comentarios/{id}', function($id) {
+    Comentario::find($id)->delete();
 
     return 204;
 });
