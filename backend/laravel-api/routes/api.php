@@ -2,6 +2,7 @@
 Use App\Models\Libro;
 Use App\Models\Obra;
 Use App\Models\Comentario;
+Use App\Models\Foro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -98,6 +99,32 @@ Route::put('comentarios/{id}', function(Request $request, $id) {
 
 Route::delete('comentarios/{id}', function($id) {
     Comentario::find($id)->delete();
+
+    return 204;
+});
+
+//RUTAS FORO
+Route::get('foro', function() {
+    return Foro::all();
+    
+});
+Route::get('foro/{id}', function($id) {
+    return Foro::find($id);
+});
+
+Route::post('foro', function(Request $request) {
+    return Foro::create($request->all);
+});
+
+Route::put('foro/{id}', function(Request $request, $id) {
+    $libro = Foro::findOrFail($id);
+    $libro->update($request->all());
+
+    return $libro;
+});
+
+Route::delete('foro/{id}', function($id) {
+    Foro::find($id)->delete();
 
     return 204;
 });
