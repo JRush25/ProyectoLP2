@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Obra extends Model
 {
-    protected $fileable = ['titulo','descripcion','nombre_archivo'];
+    protected $fillable = ['titulo','descripcion','nombre_archivo'];
 }

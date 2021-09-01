@@ -59,7 +59,13 @@ Route::get('obras/{id}', function($id) {
 });
 
 Route::post('obras', function(Request $request) {
-    return Obra::create($request->all);
+    //return Obra::create($request->all);
+    $data = $request->all();
+        return Obra::create([
+            'titulo' => $data['titulo'],
+            'descripcion' => $data['descripcion'],
+            'nombre_archivo' => $data['nombre_archivo'],
+        ]);
 });
 
 Route::put('obras/{id}', function(Request $request, $id) {
@@ -71,7 +77,6 @@ Route::put('obras/{id}', function(Request $request, $id) {
 
 Route::delete('obras/{id}', function($id) {
     Obra::find($id)->delete();
-
     return 204;
 });
 

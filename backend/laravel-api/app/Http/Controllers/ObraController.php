@@ -19,7 +19,7 @@ class ObraController extends Controller
 
     public function store(Request $request)
     {
-        $obra = Obra::create($request->all());
+        $obra = Obra::save();
 
         return response()->json($obra, 201);
     }
