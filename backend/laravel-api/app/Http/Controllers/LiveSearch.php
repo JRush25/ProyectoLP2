@@ -23,6 +23,7 @@ class LiveSearch extends Controller
        $data = DB::table('libros')
          ->where('Titulo', 'like', '%'.$query.'%')
          ->orWhere('Autor', 'like', '%'.$query.'%')
+         ->orWhere('Genero', 'like', '%'.$query.'%')
          ->orWhere('Favorito', 'like', '%'.$query.'%')
          ->orderBy('id', 'asc')
          ->get();
@@ -43,6 +44,7 @@ class LiveSearch extends Controller
         <tr>
          <td>'.$row->Titulo.'</td>
          <td>'.$row->Autor.'</td>
+         <td>'.$row->Genero.'</td>
          <td>'.$row->Favorito.'</td>
         </tr>
         ';

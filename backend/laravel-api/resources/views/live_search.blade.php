@@ -14,15 +14,16 @@
     <div class="panel-heading">Buscar Libros</div>
     <div class="panel-body">
      <div class="form-group">
-      <input type="text" name="search" id="search" class="form-control" placeholder="Ingresar Libro a Buscar" />
+      <input type="text" name="search" id="search" class="form-control" placeholder="Buscar..." />
      </div>
      <div class="table-responsive">
-      <h3 align="center">Matches: <span id="total_records"></span></h3>
+      <h3 align="center">Libros: <span id="total_records"></span></h3>
       <table class="table table-striped table-bordered">
        <thead>
         <tr>
          <th>Titulo</th>
          <th>Autor</th>
+         <th>Genero</th>
          <th>Favorito</th>
         </tr>
        </thead>
