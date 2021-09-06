@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+?>
+<?php
+
+Route::get('/live_search', 'App\Http\Controllers\LiveSearch@index');
+Route::get('/live_search/action', 'App\Http\Controllers\LiveSearch@action')->name('live_search.action');
+
+?>
+
