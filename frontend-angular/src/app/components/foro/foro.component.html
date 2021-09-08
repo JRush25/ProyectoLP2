@@ -1,1 +1,31 @@
-<p>foro works!</p>
+<div class="wrapper">
+    <div class="page-header page-header-small">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/soccer-bg2.jpg');">
+        </div>
+        <div class="container">
+            <div class="content-center">
+                <h1>Disfruta Leyendo</h1>
+                <h3>Foro</h3>
+            </div>
+        </div>
+    </div>
+    <div class="seccionForo" style="margin-left: 500px;">
+        <h2 style="margin-top: 20px;">Comenta tus opiniones</h2>
+        <form #foroPost="ngForm" (ngSubmit)="onSubmit(foroPost.value)"></form>
+        <textarea [(ngModel)]= "comment" style="margin-top: 20px;  width: 50%;"></textarea>
+        <br>
+        <br>
+        <button (click)= "postear()">Comenta</button>
+        <div class="comenta" *ngFor="let comments of postComment">
+            <p>{{comments}}</p>
+        </div>
+    </div>
+    <html>
+    <h1><b>Comentarios</b></h1>
+    <div class="container mt-5 mb-3">
+        <app-listaforo [dataEntrante]="detalleForo"
+        *ngFor="let detalleForo of listForo"></app-listaforo>
+    </div>
+</html>
+
+</div>

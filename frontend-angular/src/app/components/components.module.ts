@@ -14,6 +14,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { ObraComponent } from './obra/obra.component';
 import { ListaobraComponent } from './listaobra/listaobra.component';
 import { CrearobraComponent } from './crearobra/crearobra.component';
+import { ListaforoComponent } from './listaforo/listaforo.component';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import { CrearobraComponent } from './crearobra/crearobra.component';
         CatalogoComponent,
         ObraComponent,
         ListaobraComponent,
-        CrearobraComponent
+        CrearobraComponent,
+        ListaforoComponent
     ],
     exports:[ ComponentsComponent ]
 })
