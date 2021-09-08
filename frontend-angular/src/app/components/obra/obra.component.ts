@@ -15,17 +15,10 @@ export class ObraComponent implements OnInit {
   ngOnInit(): void {
     this.cargarData();
   }
+  
   public cargarData(){
     this.http.get('http://localhost:8000/api/obras').subscribe((result)=>{
       this.listObras = result;
     })
-  }
-
-  onSubmit(data)
-  {
-    this.http.post('http://localhost:8000/api/obras',data)
-    .subscribe((result)=>{
-      window.location.reload();
-    })
-  }
+  }  
 }

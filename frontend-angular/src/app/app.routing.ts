@@ -10,6 +10,7 @@ import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { ObraComponent } from './components/obra/obra.component';
 import { ListaobraComponent } from './components/listaobra/listaobra.component';
+import { CrearobraComponent } from './components/crearobra/crearobra.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'inicio', pathMatch: 'full' },
@@ -19,8 +20,8 @@ const routes: Routes =[
     { path: 'catalogo',     component: CatalogoComponent },
     { path: 'contacto',     component: ContactoComponent },
     { path: 'obra',     component: ObraComponent },
-    { path: 'listaobra', component:ListaobraComponent}
-
+    { path: 'listaobra', component:ListaobraComponent},
+    { path: 'crearobra', component:CrearobraComponent}
 ];
 
 @NgModule({

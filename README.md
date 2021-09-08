@@ -23,7 +23,8 @@
 
 ## Rutas FRONTEND
 
-- Visualización y registro de obras: http://localhost:4200/obra
+- Visualización de obras: http://localhost:4200/obra
+- Registro de obras: http://localhost:4200/crearobra
 - AJAX implementado en Lavarel para busqueda y filtro de libros : http://localhost:8000/live_search
 ## API BACKEND
 

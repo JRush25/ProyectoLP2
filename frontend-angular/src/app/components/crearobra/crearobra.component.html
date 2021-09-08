@@ -1,0 +1,35 @@
+<html>
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Registra tu obra</h3>
+                        
+                        <form #obraPost="ngForm" (ngSubmit)="onSubmit(obraPost.value)">
+
+                            <div class="col-md-12">
+                                <p>Título:</p>
+                                <input class="form-control" type="text" name="titulo" ngModel placeholder="Escriba el título" required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <p>Descripción:</p>
+                                <input class="form-control" type="text" name="descripcion" ngModel placeholder="Describe tu obra" required>                             
+                            </div>
+
+                            <div class="col-md-12">
+                                <p>Sube tu obra:</p>
+                                <input class="form-control" type="text" name="nombre_archivo" ngModel placeholder="Agrega un archivo" required>                             
+                            </div>              
+
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
