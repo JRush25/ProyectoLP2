@@ -8,11 +8,12 @@ import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
         AppComponent,
-        NavbarComponent
+        NavbarComponent,
     ],
     imports: [
         BrowserAnimationsModule,
@@ -21,6 +22,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
         RouterModule,
         AppRoutingModule,
         ComponentsModule,
+        HttpClientModule
 
     ],
     providers: [],

@@ -8,6 +8,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { ForoComponent } from './components/foro/foro.component';
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { ObraComponent } from './components/obra/obra.component';
+import { ListaobraComponent } from './components/listaobra/listaobra.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'inicio', pathMatch: 'full' },
@@ -15,8 +17,9 @@ const routes: Routes =[
     { path: 'inicio',     component: InicioComponent },
     { path: 'foro',       component: ForoComponent },
     { path: 'catalogo',     component: CatalogoComponent },
-    { path: 'contacto',     component: ContactoComponent }
-    
+    { path: 'contacto',     component: ContactoComponent },
+    { path: 'obra',     component: ObraComponent },
+    { path: 'listaobra', component:ListaobraComponent}
 
 ];
 
