@@ -9,11 +9,26 @@ class LiveSearch extends Controller
 {
     function index()
     {
-     return view('live_search');
-    }
+      //Se extrae de la tabla libros todos los Generos y Autores que esten en esta
+      $autor = DB::table('libros')
+      ->select('Autor')
+      ->groupBy('Autor')
+      ->orderBy('Autor', 'ASC')
+      ->get();
+      
+      $genero = DB::table('libros')
+      ->select('Genero')
+      ->groupBy('Genero')
+      ->orderBy('Genero', 'ASC')
+      ->get();
+ return view('live_search', compact('genero','autor')); // Los regresa a la vista como variables
 
+     
+    }
+    //Recibe los datos de la tabla de base de datos y los ordena 
     function action(Request $request)
     {
+     
      if($request->ajax())
      {
       $output = '';
@@ -54,7 +69,7 @@ class LiveSearch extends Controller
       {
        $output = '
        <tr>
-        <td align="center" colspan="5">No Data Found</td>
+        <td align="center" colspan="5">No se encontro el libro solicitado</td>
        </tr>
        ';
       }
@@ -65,5 +80,8 @@ class LiveSearch extends Controller
 
       echo json_encode($data);
      }
+     
     }
+    
 }
+?>
