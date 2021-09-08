@@ -24,11 +24,12 @@
 ## Rutas FRONTEND
 
 - Visualización y registro de obras: http://localhost:4200/obra
-
-
+-AJAX con Larel para busqueda y filtro de libros : http://localhost:8000/live_search
 ## API BACKEND
 
 - GET de todos las obras: http://localhost:8000/api/obras
 - GET por id: http://localhost:8000/api/obras/:id
 - POST creación de nuevas obras: http://localhost:8000/api/obras
+- GET de los libros y sus autores : http://localhost:8000/api/libros
+- POST creacion de nuevos libroshttp: http://localhost:8000/api/libros
 
